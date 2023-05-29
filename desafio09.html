@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .errado {
+            background-color: rgb(252, 19, 19);
+        }
+
+        .certo {
+            background-color: rgb(2, 255, 36);
+        }
+    </style>
+    <title>Desafio ano bissexto</title>
+</head>
+
+<body>
+    <h1>Desafio ano bissexto</h1>
+
+    <button onclick="bissexto()">Verificar</button>
+    <div id="resp1"></div>
+    <div id="resp2"></div>
+
+    <script>
+        function bissexto() {
+
+            let ano = window.prompt("Qual ano você quer verificar?")
+            let resp1 = window.document.getElementById("resp1")
+            let resp2 = window.document.getElementById("resp2")
+            resp1.innerHTML = `<h1>Analisando o ano de ${ano}...<h1>`
+
+            if (ano % 4 == 0) {
+                resp2.innerHTML = `<p>O ano de ${ano} <span class="certo">É BISSEXTO </span></p>`
+            }
+            else {
+                resp2.innerHTML = `<p>O ano de ${ano} <span class="errado">NÃO É BISSEXTO</span></p>`
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

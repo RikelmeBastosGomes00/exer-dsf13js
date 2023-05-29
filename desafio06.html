@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio aluno</title>
+    <style>
+        .aprv {
+            color: green;
+            background-color: greenyellow;
+        }
+
+        .rec {
+            color: rgb(rgb(255, 221, 0));
+            background-color: rgb(188, 157, 6);
+        }
+
+        .rprv {
+            color: rgb(187, 0, 0);
+            background-color: rgb(239, 69, 7);
+        }
+    </style>
+</head>
+
+<body>
+    <h1> Desafio Situação do aluno</h1>
+    <button onclick="media()">Entrar com as notas</button>
+     <section id="set"></section>
+
+    <script>
+        function media() {
+            let nomeAl = window.prompt("Qual é o nome do aluno?")
+            let nt1 = Number(window.prompt(`Primeira nota de ${nomeAl}:`))
+            let nt2 = Number(window.prompt(`Segunda nota de ${nomeAl}:`))
+            let med = (nt1 + nt2) / 2
+            let set = window.document.getElementById("set")
+          
+
+            if (med >= 6) {
+                set.innerHTML = `<br><h2> Analisando a situação de ${nomeAl}</h2>`
+                set.innerHTML += `<br><h2>Com as notas ${nt1} e ${nt2}, a <b>média é ${med}</b></h2><br>`
+                set.innerHTML += `<br><h2>Com média acima de 6.0, o aluno está <span class="aprv"><b>APROVADO</b></span></h2><br>`
+            }
+            else if (med < 6 && med >=3) {
+                set.innerHTML = `<br><h2> Analisando a situação de ${nomeAl}</h2>`
+                set.innerHTML += `<br><h2> Com as notas ${nt1} e ${nt2}, a <b>média é ${med}</b> </h2><br>`
+                set.innerHTML += `<br><h2>Com média entre 6,0, e 3.0 o aluno está em <span class="rec"><b>RECUPERAÇÃO</b></span></h2><br>`
+             
+            }
+            else if(med < 3) {
+                set.innerHTML = `<br><h2> Analisando a situação de ${nomeAl}</h2>`
+                set.innerHTML += `<br><h2>Com as notas ${nt1} e ${nt2}, a <b>média é ${med}</b></h2><br>`
+                set.innerHTML += `<br> <h2>Com média abaixo de 3,0, o aluno está <span class="rprv"><b>Reprovado</b></span></h2><br>`
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

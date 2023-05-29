@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio preço mudou</title>
+</head>
+<body>
+<h1>Desafio o preço mudou</h1>
+<button onclick="preco()">verificar</button>
+<div id="analise"></div>
+<div id="res1"></div>
+<div id="res2"></div>
+<div id="res3"></div>
+<div id="res4"></div>
+<div id="res5"></div>
+
+<script>
+function preco(){
+let precoAnt = Number(window.prompt("Qual era o preço anterior do produto?"))
+let precoNv = Number(window.prompt("Qual é seu preço atualizado?"))
+let res1 = window.document.getElementById("res1")
+let res2 = window.document.getElementById("res2")
+let res3 = window.document.getElementById("res3")
+let res4 = window.document.getElementById("res4")
+let res5 = window.document.getElementById("res5")
+
+
+res1.innerHTML = `<h1><b>Analisando os valores informados</b></h1>`
+res2.innerHTML = `<p>o produto custava R$ ${precoAnt} e agora custa R$ ${precoNv}</p>`
+
+if( precoNv > precoAnt){
+    res3.innerHTML = `<p>Hoje o produto está mais caro.</p>`
+
+    let alterPreco = precoNv - precoAnt
+
+    res4.innerHTML = `<p>O preço R$ ${alterPreco} Subiu em relação ao preço anterior</p>`
+   
+    let porc = (alterPreco/precoAnt)*100
+    res5.innerHTML = `<p>uma variação de ${porc.toFixed(1)}% para cima</p>`
+
+}
+
+      else if(precoAnt > precoNv){
+    res3.innerHTML = `<p>Hoje o produto está mais barato.</p>`
+
+    let alterPreco = precoAnt - precoNv
+
+    res4.innerHTML = `<p>O preço R$ ${alterPreco} Baixou em relação ao preço anterior</p>`
+   
+    let porc = (alterPreco/precoNv)*100
+    res5.innerHTML = `<p>uma variação de ${porc.toFixed(1)}% para baixo</p>`
+
+}
+  else if(precoAnt == precoNv){
+    res3.innerHTML = `<p>Hoje o produto está com o mesmo preço.</p>`
+  }
+
+
+}
+
+
+</script>
+</body>
+</html>

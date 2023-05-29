@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio bhaskara</title>
+    <style>
+         .amarelo{ background-color: rgb(253, 253, 87);}
+    </style>
+</head>
+<body>
+    <h1>Desafio bhaskara</h1>
+    <button onclick="calc()">Calcular</button>
+    <h1>Resolvendo bhaskara</h1>
+    <div id="res1"></div>
+    <div id="res2"></div>
+    <div id="res3"></div>
+   
+
+    <script>
+    function calc(){
+        let a = Number(window.prompt("Qual é o valor de a?"))
+        let b = Number(window.prompt("Qual é o valor de b?"))
+        let c = Number(window.prompt("Qual é o valor de c?"))
+
+        
+        let res1 = window.document.getElementById("res1")
+        let res2 = window.document.getElementById("res2")
+        let res3 = window.document.getElementById("res3")
+      
+        let delta = (b*b)-(4*a*c)
+
+        res1.innerHTML =`<p> <b>A equação atual é <b>${a}x² + ${b}x + ${c}</b> = 0 </p>`
+        res2.innerHTML = `<p> O cálculo de delta realizado será<b>Δ = ${b}² - 4 . ${a} . ${c}</b></p>`
+        res3.innerHTML += `<p>O valor calculado foi <span class="amarelo">Δ = ${delta}</span>`
+
+
+    }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio reajuste</title>
+</head>
+<body>
+    <h1>Desafio reajuste</h1>
+    <button onclick="reajus()">Reajustar Salário</button>
+    <div id="res1"></div>
+    <div id="res2"></div>
+    <div id="res3"></div>
+    <div id="res4"></div>
+    <script>
+        function reajus(){
+        let nm = window.prompt("Qual é nome do funcionário?")
+        let sal = Number(window.prompt(`Qual é o salario do ${nm} ?`))
+        let porc = Number(window.prompt(`O salário do ${nm} vai ser ajustado em quantos porcento?`))
+        let res1 = window.document.getElementById("res1")
+        let res2 = window.document.getElementById("res2")
+        let res3 = window.document.getElementById("res3")
+        let res4 = window.document.getElementById("res4")
+
+        let aumento = sal * (porc/100)
+        let nvsal= sal + aumento
+         
+        res1.innerHTML = `<h2>${nm} Recebeu um aumento Salarial!</h2>`
+        res2.innerHTML = `<h2>O salario atual era de R% ${sal}</h2>`
+        res3.innerHTML = `<h2>Com o aumento do reajuste de ${porc}%, vai aumentar R$ ${aumento} no pròximo mês.</h2>`
+        res4.innerHTML = `<h2>É apartir daí,${nm} vai passar a ganhar R$ ${nvsal}</h2>`
+
+        }
+
+    </script>
+</body>
+</html>
